@@ -41,11 +41,11 @@
             <label for="css-file" class="file-upload-label">
               <div class="file-upload-text">
                 <div>📁 Click to upload CSS file</div>
-                <div style="margin-top: 0.5rem; font-size: 0.8rem;">CSS files only</div>
+                <div class="file-upload-subtext">CSS files only</div>
               </div>
             </label>
           </div>
-          <div id="file-name" class="file-name"></div>
+          <div id="file-name" class="file-name hidden"></div>
         </div>
 
         <button type="submit" class="submit-btn" id="submit-btn">
@@ -53,14 +53,14 @@
         </button>
       </form>
 
-      <div class="loading" id="loading">
+      <div class="loading hidden" id="loading">
         <div class="spinner"></div>
         Working on your request...
       </div>
 
-      <div class="result" id="result">
+      <div class="result hidden" id="result">
         <div id="result-message"></div>
-        <a id="pr-link" class="pr-link" target="_blank" style="display: none;"></a>
+        <a id="pr-link" class="pr-link hidden" target="_blank"></a>
       </div>
     </div>
   </div>
@@ -79,9 +79,11 @@
     fileInput.addEventListener('change', function (e) {
       if (e.target.files.length > 0) {
         fileName.textContent = `Selected: ${e.target.files[ 0 ].name}`;
-        fileName.style.display = 'block';
+        fileName.classList.remove('hidden');
+        fileName.classList.add('show-block');
       } else {
-        fileName.style.display = 'none';
+        fileName.classList.add('hidden');
+        fileName.classList.remove('show-block');
       }
     });
 
@@ -97,8 +99,10 @@
 
       // Show loading state
       submitBtn.disabled = true;
-      loading.style.display = 'block';
-      result.style.display = 'none';
+      loading.classList.remove('hidden');
+      loading.classList.add('show-block');
+      result.classList.add('hidden');
+      result.classList.remove('show-block');
 
       try {
         const response = await fetch('/api/agent', {
@@ -119,7 +123,8 @@
           if (data.prLink) {
             prLink.href = data.prLink;
             prLink.textContent = 'View Pull Request →';
-            prLink.style.display = 'inline-block';
+            prLink.classList.remove('hidden');
+            prLink.classList.add('show-inline-block');
           }
         } else {
           showResult(`Error: ${data.error || 'Something went wrong'}`, 'error');
@@ -129,20 +134,22 @@
       } finally {
         // Hide loading state
         submitBtn.disabled = false;
-        loading.style.display = 'none';
+        loading.classList.add('hidden');
+        loading.classList.remove('show-block');
       }
     });
 
     function showResult(message, type) {
       result.className = `result ${type}`;
-      result.style.display = 'block';
+      result.classList.remove('hidden');
+      result.classList.add('show-block');
       resultMessage.textContent = message;
 
       if (type === 'error') {
-        prLink.style.display = 'none';
+        prLink.classList.add('hidden');
+        prLink.classList.remove('show-inline-block');
       }
     }
   </script>
 </body>
-
 </html>

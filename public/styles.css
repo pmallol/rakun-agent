@@ -156,7 +156,7 @@ body {
 
 .loading {
   display: none;
-  text-align: center;
+  text-align: left;
   margin: 1rem 0;
   color: #6b7280;
 }
@@ -205,4 +205,22 @@ body {
 
 .pr-link:hover {
   text-decoration: underline;
+}
+
+/* Utility classes for JavaScript manipulation */
+.file-upload-subtext {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.show-block {
+  display: block !important;
+}
+
+.show-inline-block {
+  display: inline-block !important;
 }
