@@ -105,10 +105,10 @@ export async function codingAgent(prompt: string, repoUrl?: string) {
             title, 
             body, 
             branch, 
-          }); 
+          });
           return { success: true, linkToPR: pr_url }; 
-        }, 
-      }), 
+        },
+      }),
     },
   });
 
