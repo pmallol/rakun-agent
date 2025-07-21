@@ -84,7 +84,7 @@
   "variables": [
     {
       "id": "VariableID:3014:5929",
-      "name": "gray/-gray-50 dark:-slate-gray-950",
+      "name": "gray/50-950",
       "description": "Tile, navbar, etc backgrounds",
       "type": "COLOR",
       "valuesByMode": {
@@ -129,7 +129,7 @@
     },
     {
       "id": "VariableID:3014:5930",
-      "name": "gray/-gray-100 dark:-slate-gray-900",
+      "name": "gray/100-900",
       "description": "Light divider",
       "type": "COLOR",
       "valuesByMode": {
@@ -174,7 +174,7 @@
     },
     {
       "id": "VariableID:3014:5931",
-      "name": "gray/-gray-200 dark:-slate-gray-800",
+      "name": "gray/200-800",
       "description": "Dark divider",
       "type": "COLOR",
       "valuesByMode": {
@@ -219,7 +219,7 @@
     },
     {
       "id": "VariableID:3014:5932",
-      "name": "gray/-gray-300 dark:-slate-gray-700",
+      "name": "gray/300-700",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -264,7 +264,7 @@
     },
     {
       "id": "VariableID:3014:5933",
-      "name": "gray/-gray-900 dark:-slate-gray-100",
+      "name": "gray/900-100",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -309,7 +309,7 @@
     },
     {
       "id": "VariableID:3014:5934",
-      "name": "gray/-gray-400 dark:-slate-gray-600",
+      "name": "gray/400-600",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -354,7 +354,7 @@
     },
     {
       "id": "VariableID:3014:5935",
-      "name": "gray/-gray-500 dark:-slate-gray-500",
+      "name": "gray/500-500",
       "description": "Secondary text",
       "type": "COLOR",
       "valuesByMode": {
@@ -399,7 +399,7 @@
     },
     {
       "id": "VariableID:3014:5936",
-      "name": "gray/-gray-700 dark:-slate-gray-300",
+      "name": "gray/700-300",
       "description": "Default paragraph text",
       "type": "COLOR",
       "valuesByMode": {
@@ -444,7 +444,7 @@
     },
     {
       "id": "VariableID:3014:5937",
-      "name": "gray/-gray-600 dark:-slate-gray-400",
+      "name": "gray/600-400",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -489,7 +489,7 @@
     },
     {
       "id": "VariableID:3014:5938",
-      "name": "gray/-gray-800 dark:-slate-gray-200",
+      "name": "gray/800-200",
       "description": "Headers, values in tables, metrics",
       "type": "COLOR",
       "valuesByMode": {
@@ -534,7 +534,7 @@
     },
     {
       "id": "VariableID:3014:5939",
-      "name": "blue/-blue-50",
+      "name": "blue/50-950",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -579,7 +579,7 @@
     },
     {
       "id": "VariableID:3014:5940",
-      "name": "blue/-blue-100",
+      "name": "blue/100-900",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -624,7 +624,7 @@
     },
     {
       "id": "VariableID:3014:5941",
-      "name": "blue/-blue-200",
+      "name": "blue/200-800",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -669,7 +669,7 @@
     },
     {
       "id": "VariableID:3014:5942",
-      "name": "blue/-blue-300",
+      "name": "blue/300-700",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -714,7 +714,7 @@
     },
     {
       "id": "VariableID:3014:5943",
-      "name": "blue/-blue-400",
+      "name": "blue/400-600",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -759,7 +759,7 @@
     },
     {
       "id": "VariableID:3014:5944",
-      "name": "blue/-blue-500",
+      "name": "blue/500-500",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -804,7 +804,7 @@
     },
     {
       "id": "VariableID:3014:5945",
-      "name": "blue/-blue-600",
+      "name": "blue/600-400",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -849,7 +849,7 @@
     },
     {
       "id": "VariableID:3014:5946",
-      "name": "blue/-blue-700",
+      "name": "blue/700-300",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -894,7 +894,7 @@
     },
     {
       "id": "VariableID:3014:5947",
-      "name": "blue/-blue-800",
+      "name": "blue/800-200",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -939,7 +939,7 @@
     },
     {
       "id": "VariableID:3014:5948",
-      "name": "blue/-blue-900",
+      "name": "blue/900-100",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -984,7 +984,7 @@
     },
     {
       "id": "VariableID:3014:5949",
-      "name": "blue/-blue-950",
+      "name": "blue/950-50",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -1029,7 +1029,7 @@
     },
     {
       "id": "VariableID:3014:5950",
-      "name": "green/-green-100",
+      "name": "green/100-900",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -1074,7 +1074,7 @@
     },
     {
       "id": "VariableID:3014:5951",
-      "name": "green/-green-200",
+      "name": "green/200-800",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -1119,7 +1119,7 @@
     },
     {
       "id": "VariableID:3014:5952",
-      "name": "green/-green-300",
+      "name": "green/300-700",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -1164,7 +1164,7 @@
     },
     {
       "id": "VariableID:3014:5953",
-      "name": "green/-green-400",
+      "name": "green/400-600",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -1209,7 +1209,7 @@
     },
     {
       "id": "VariableID:3014:5954",
-      "name": "green/-green-500",
+      "name": "green/500-500",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -1254,7 +1254,7 @@
     },
     {
       "id": "VariableID:3014:5955",
-      "name": "green/-green-600",
+      "name": "green/600-400",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -1299,7 +1299,7 @@
     },
     {
       "id": "VariableID:3014:5956",
-      "name": "green/-green-700",
+      "name": "green/700-300",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -1344,7 +1344,7 @@
     },
     {
       "id": "VariableID:3014:5957",
-      "name": "green/-green-800",
+      "name": "green/800-200",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -1389,7 +1389,7 @@
     },
     {
       "id": "VariableID:3014:5958",
-      "name": "green/-green-900",
+      "name": "green/900-100",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -1434,7 +1434,7 @@
     },
     {
       "id": "VariableID:3014:5959",
-      "name": "yellow/-yellow-100",
+      "name": "yellow/100-900",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -1479,7 +1479,7 @@
     },
     {
       "id": "VariableID:3014:5960",
-      "name": "yellow/-yellow-200",
+      "name": "yellow/200-800",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -1524,7 +1524,7 @@
     },
     {
       "id": "VariableID:3014:5961",
-      "name": "yellow/-yellow-300",
+      "name": "yellow/300-700",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -1569,7 +1569,7 @@
     },
     {
       "id": "VariableID:3014:5962",
-      "name": "yellow/-yellow-400",
+      "name": "yellow/400-600",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -1614,7 +1614,7 @@
     },
     {
       "id": "VariableID:3014:5963",
-      "name": "yellow/-yellow-500",
+      "name": "yellow/500-500",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -1659,7 +1659,7 @@
     },
     {
       "id": "VariableID:3014:5964",
-      "name": "yellow/-yellow-600",
+      "name": "yellow/600-400",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -1704,7 +1704,7 @@
     },
     {
       "id": "VariableID:3014:5965",
-      "name": "yellow/-yellow-700",
+      "name": "yellow/700-300",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -1749,7 +1749,7 @@
     },
     {
       "id": "VariableID:3014:5966",
-      "name": "yellow/-yellow-800",
+      "name": "yellow/800-200",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -1794,7 +1794,7 @@
     },
     {
       "id": "VariableID:3014:5967",
-      "name": "red/-red-100",
+      "name": "red/100-900",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -1839,7 +1839,7 @@
     },
     {
       "id": "VariableID:3014:5968",
-      "name": "yellow/-yellow-900",
+      "name": "yellow/900-100",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -1884,7 +1884,7 @@
     },
     {
       "id": "VariableID:3014:5969",
-      "name": "red/-red-200",
+      "name": "red/200-800",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -1929,7 +1929,7 @@
     },
     {
       "id": "VariableID:3014:5970",
-      "name": "red/-red-300",
+      "name": "red/300-700",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -1974,7 +1974,7 @@
     },
     {
       "id": "VariableID:3014:5971",
-      "name": "red/-red-400",
+      "name": "red/400-600",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -2019,7 +2019,7 @@
     },
     {
       "id": "VariableID:3014:5972",
-      "name": "red/-red-500",
+      "name": "red/500-500",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -2064,7 +2064,7 @@
     },
     {
       "id": "VariableID:3014:5973",
-      "name": "red/-red-600",
+      "name": "red/600-400",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -2109,7 +2109,7 @@
     },
     {
       "id": "VariableID:3014:5974",
-      "name": "red/-red-700",
+      "name": "red/700-300",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -2154,7 +2154,7 @@
     },
     {
       "id": "VariableID:3014:5975",
-      "name": "red/-red-800",
+      "name": "red/800-200",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -2199,7 +2199,7 @@
     },
     {
       "id": "VariableID:3014:5976",
-      "name": "red/-red-900",
+      "name": "red/900-100",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -2244,7 +2244,7 @@
     },
     {
       "id": "VariableID:3014:5977",
-      "name": "pink/-pink-100",
+      "name": "pink/100-900",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -2289,7 +2289,7 @@
     },
     {
       "id": "VariableID:3014:5978",
-      "name": "pink/-pink-200",
+      "name": "pink/200-800",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -2334,7 +2334,7 @@
     },
     {
       "id": "VariableID:3014:5979",
-      "name": "pink/-pink-300",
+      "name": "pink/300-700",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -2379,7 +2379,7 @@
     },
     {
       "id": "VariableID:3014:5980",
-      "name": "pink/-pink-400",
+      "name": "pink/400-600",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -2424,7 +2424,7 @@
     },
     {
       "id": "VariableID:3014:5981",
-      "name": "pink/-pink-500",
+      "name": "pink/500-500",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -2469,7 +2469,7 @@
     },
     {
       "id": "VariableID:3014:5982",
-      "name": "pink/-pink-600",
+      "name": "pink/600-400",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -2514,7 +2514,7 @@
     },
     {
       "id": "VariableID:3014:5983",
-      "name": "pink/-pink-700",
+      "name": "pink/700-300",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -2559,7 +2559,7 @@
     },
     {
       "id": "VariableID:3014:5984",
-      "name": "pink/-pink-800",
+      "name": "pink/800-200",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -2604,7 +2604,7 @@
     },
     {
       "id": "VariableID:3014:5985",
-      "name": "pink/-pink-900",
+      "name": "pink/900-100",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -2649,7 +2649,7 @@
     },
     {
       "id": "VariableID:3014:5986",
-      "name": "gray/-gray-950 dark:-slate-gray-50",
+      "name": "gray/950-50",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
@@ -2694,7 +2694,7 @@
     },
     {
       "id": "VariableID:3014:5987",
-      "name": "background/--white",
+      "name": "background/default",
       "description": "",
       "type": "COLOR",
       "valuesByMode": {
