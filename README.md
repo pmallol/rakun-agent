@@ -46,26 +46,14 @@ Contributions are welcome! To contribute to this project, please follow these st
 
 Please make sure to follow the existing code style and include tests for new features or bug fixes.
 
-## Contributing
-
-Contributions are welcome! To contribute to this project, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bugfix.
-3. Make your changes with clear and concise commit messages.
-4. Ensure the project builds and tests pass.
-5. Submit a pull request with a detailed description of your changes.
-
-Please make sure to follow the existing code style and include tests for new features or bug fixes.
-
 ## Usage
 
 ```bash
-curl -X POST https://your-deployment.vercel.app/api/agent \
+curl -X POST https://rakun-agent.vercel.app/api/agent \
   -H "Content-Type: application/json" \
   -d '{
     "prompt": "update readme to say hey were so back",
-    "repoUrl": "https://github.com/nicoalbanese/ai-sdk-langgraph/"
+    "repoUrl": "https://github.com/pmallol/rakun-agent"
   }'
 ```
 
