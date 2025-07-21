@@ -2,21 +2,22 @@ import { generateText, stepCountIs, tool } from "ai";
 import { z } from "zod/v4";
 import { type Sandbox } from "@vercel/sandbox";
 import {
-  createSandbox, 
-  editFile, 
-  listFiles, 
-  readFile, 
-} from "./sandbox"; 
+  createPR, 
+  createSandbox,
+  editFile,
+  listFiles,
+  readFile,
+} from "./sandbox";
 
 export async function codingAgent(prompt: string, repoUrl?: string) {
-  console.log("repoUrl:", repoUrl); 
-  let sandbox: Sandbox | undefined; 
+  console.log("repoUrl:", repoUrl);
+  let sandbox: Sandbox | undefined;
 
   const result = await generateText({
     model: "openai/gpt-4.1",
     prompt,
     system:
-      "You are a coding agent. You will be working with js/ts projects. Your responses must be concise.",
+      "You are a coding agent. You will be working with js/ts projects. Your responses must be concise. If you make changes to the codebase, be sure to run the create_pr tool once you are done.", 
     stopWhen: stepCountIs(10),
     tools: {
       read_file: tool({
@@ -29,8 +30,8 @@ export async function codingAgent(prompt: string, repoUrl?: string) {
         }),
         execute: async ({ path }) => {
           try {
-            if (!sandbox) sandbox = await createSandbox(repoUrl!); 
-            const output = await readFile(sandbox, path); 
+            if (!sandbox) sandbox = await createSandbox(repoUrl!);
+            const output = await readFile(sandbox, path);
             return { path, output };
           } catch (error) {
             console.error(`Error reading file at ${path}:`, error.message);
@@ -54,8 +55,8 @@ export async function codingAgent(prompt: string, repoUrl?: string) {
             return { error: "You cannot read the path: ", path };
           }
           try {
-            if (!sandbox) sandbox = await createSandbox(repoUrl!); 
-            const output = await listFiles(sandbox, path); 
+            if (!sandbox) sandbox = await createSandbox(repoUrl!);
+            const output = await listFiles(sandbox, path);
             return { path, output };
           } catch (e) {
             console.error(`Error listing files:`, e);
@@ -77,8 +78,8 @@ export async function codingAgent(prompt: string, repoUrl?: string) {
         }),
         execute: async ({ path, old_str, new_str }) => {
           try {
-            if (!sandbox) sandbox = await createSandbox(repoUrl!); 
-            await editFile(sandbox, path, old_str, new_str); 
+            if (!sandbox) sandbox = await createSandbox(repoUrl!);
+            await editFile(sandbox, path, old_str, new_str);
             return { success: true };
           } catch (e) {
             console.error(`Error editing file ${path}:`, e);
@@ -86,12 +87,34 @@ export async function codingAgent(prompt: string, repoUrl?: string) {
           }
         },
       }),
+      create_pr: tool({
+        description:
+          "Create a pull request with the current changes. This will add all files, commit changes, push to a new branch, and create a PR using GitHub's REST API. Use this as the final step when making changes.", 
+        inputSchema: z.object({
+          title: z.string().describe("The title of the pull request"), 
+          body: z.string().describe("The body/description of the pull request"), 
+          branch: z 
+            .string() 
+            .nullable() 
+            .describe(
+              "The name of the branch to create (defaults to a generated name)", 
+            ), 
+        }), 
+        execute: async ({ title, body, branch }) => {
+          const { pr_url } = await createPR(sandbox!, repoUrl!, {
+            title, 
+            body, 
+            branch, 
+          }); 
+          return { success: true, linkToPR: pr_url }; 
+        }, 
+      }), 
     },
   });
 
   if (sandbox) {
-    await sandbox.stop(); 
-  } 
+    await sandbox.stop();
+  }
 
   return { response: result.text };
 }
