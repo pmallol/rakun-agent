@@ -1,5 +1,5 @@
 import { generateText, stepCountIs, tool } from "ai";
-import { z } from "zod/v4";
+import { z } from "zod";
 import { type Sandbox } from "@vercel/sandbox";
 import {
   createPR, 
@@ -10,15 +10,15 @@ import {
 } from "./sandbox";
 
 export async function codingAgent(prompt: string, repoUrl?: string) {
-  console.log("repoUrl:", repoUrl);
   let sandbox: Sandbox | undefined;
 
-  const result = await generateText({
-    model: "openai/gpt-4.1",
-    prompt,
-    system:
-      "You are a coding agent. You will be working with js/ts projects. Your responses must be concise. If you make changes to the codebase, be sure to run the create_pr tool once you are done.", 
-    stopWhen: stepCountIs(10),
+  try {
+    const result = await generateText({
+      model: "openai/gpt-4.1",
+      prompt,
+      system:
+        "You are a coding agent. You will be working with js/ts projects. Your responses must be concise. If you make changes to the codebase, be sure to run the create_pr tool once you are done. When you create a PR, include the PR URL from the tool response in your final message.", 
+      stopWhen: stepCountIs(10),
     tools: {
       read_file: tool({
         description:
@@ -110,11 +110,18 @@ export async function codingAgent(prompt: string, repoUrl?: string) {
         },
       }),
     },
-  });
+    });
 
-  if (sandbox) {
-    await sandbox.stop();
+    if (sandbox) {
+      await sandbox.stop();
+    }
+
+    return { response: result.text };
+  } catch (error) {
+    console.error("Coding agent error:", error);
+    if (sandbox) {
+      await sandbox.stop();
+    }
+    throw error;
   }
-
-  return { response: result.text };
 }

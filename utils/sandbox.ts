@@ -76,6 +76,11 @@ export const createPR = async (
   prDetails: { title: string; body: string; branch: string | null },
 ) => {
   try {
+    console.log("=== PR Creation Debug ===");
+    console.log("GITHUB_TOKEN exists:", !!process.env.GITHUB_TOKEN);
+    console.log("repoUrl:", repoUrl);
+    console.log("prDetails:", prDetails);
+    
     if (!process.env.GITHUB_TOKEN)
       throw new Error("GITHUB_TOKEN environment variable is required");
 
