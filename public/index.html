@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rakun Agent</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="/logo.svg" alt="Checkly Logo" class="logo">
+      <div>
+        <h1 class="title">Rakun Agent</h1>
+      </div>
+    </div>
+
+    <p class="subtitle">AI-powered coding agent for creating pull requests in your repositories.</p>
+
+    <div class="form-card">
+      <form id="agent-form">
+        <div class="form-group">
+          <label class="label" for="repo-url">Repository</label>
+          <input type="text" id="repo-url" name="repoUrl" class="input" value="https://github.com/pmallol/rakun-agent"
+            disabled readonly>
+        </div>
+
+        <div class="form-group">
+          <label class="label" for="prompt">What would you like the agent to do?</label>
+          <textarea id="prompt" name="prompt" class="textarea"
+            placeholder="e.g., Add a new feature for user authentication, Fix the bug in the login form, Update the documentation..."
+            required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="label">Upload CSS file (optional)</label>
+          <div class="file-upload">
+            <input type="file" id="css-file" name="cssFile" accept=".css" class="file-input">
+            <label for="css-file" class="file-upload-label">
+              <div class="file-upload-text">
+                <div>📁 Click to upload CSS file</div>
+                <div style="margin-top: 0.5rem; font-size: 0.8rem;">CSS files only</div>
+              </div>
+            </label>
+          </div>
+          <div id="file-name" class="file-name"></div>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submit-btn">
+          Create Pull Request
+        </button>
+      </form>
+
+      <div class="loading" id="loading">
+        <div class="spinner"></div>
+        Working on your request...
+      </div>
+
+      <div class="result" id="result">
+        <div id="result-message"></div>
+        <a id="pr-link" class="pr-link" target="_blank" style="display: none;"></a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('agent-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const loading = document.getElementById('loading');
+    const result = document.getElementById('result');
+    const resultMessage = document.getElementById('result-message');
+    const prLink = document.getElementById('pr-link');
+    const fileInput = document.getElementById('css-file');
+    const fileName = document.getElementById('file-name');
+
+    // File upload handling
+    fileInput.addEventListener('change', function (e) {
+      if (e.target.files.length > 0) {
+        fileName.textContent = `Selected: ${e.target.files[ 0 ].name}`;
+        fileName.style.display = 'block';
+      } else {
+        fileName.style.display = 'none';
+      }
+    });
+
+    // Form submission
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const prompt = document.getElementById('prompt').value;
+      if (!prompt.trim()) {
+        showResult('Please enter a prompt describing what you want the agent to do.', 'error');
+        return;
+      }
+
+      // Show loading state
+      submitBtn.disabled = true;
+      loading.style.display = 'block';
+      result.style.display = 'none';
+
+      try {
+        const response = await fetch('/api/agent', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            prompt: prompt,
+            repoUrl: 'https://github.com/pmallol/rakun-agent'
+          })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          showResult(data.response, 'success');
+          if (data.prLink) {
+            prLink.href = data.prLink;
+            prLink.textContent = 'View Pull Request →';
+            prLink.style.display = 'inline-block';
+          }
+        } else {
+          showResult(`Error: ${data.error || 'Something went wrong'}`, 'error');
+        }
+      } catch (error) {
+        showResult(`Network error: ${error.message}`, 'error');
+      } finally {
+        // Hide loading state
+        submitBtn.disabled = false;
+        loading.style.display = 'none';
+      }
+    });
+
+    function showResult(message, type) {
+      result.className = `result ${type}`;
+      result.style.display = 'block';
+      resultMessage.textContent = message;
+
+      if (type === 'error') {
+        prLink.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+
+</html>
